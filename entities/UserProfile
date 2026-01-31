@@ -1,0 +1,53 @@
+{
+  "name": "PointsTransaction",
+  "type": "object",
+  "properties": {
+    "wallet_address": {
+      "type": "string",
+      "description": "User's wallet address"
+    },
+    "amount": {
+      "type": "number",
+      "description": "Points amount (positive or negative)"
+    },
+    "points_type": {
+      "type": "string",
+      "enum": [
+        "regular",
+        "builder"
+      ],
+      "default": "regular"
+    },
+    "transaction_type": {
+      "type": "string",
+      "enum": [
+        "prediction_win",
+        "task_completion",
+        "referral_bonus",
+        "check_in",
+        "prediction_creation",
+        "admin_adjustment",
+        "penalty"
+      ],
+      "description": "Type of transaction"
+    },
+    "reference_id": {
+      "type": "string",
+      "description": "ID of related entity (prediction, task, etc.)"
+    },
+    "description": {
+      "type": "string",
+      "description": "Human readable description"
+    },
+    "balance_after": {
+      "type": "number",
+      "description": "Balance after this transaction"
+    }
+  },
+  "required": [
+    "wallet_address",
+    "amount",
+    "points_type",
+    "transaction_type"
+  ]
+}

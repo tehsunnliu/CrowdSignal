@@ -1,0 +1,47 @@
+{
+  "name": "TaskCompletion",
+  "type": "object",
+  "properties": {
+    "task_id": {
+      "type": "string",
+      "description": "Reference to the task"
+    },
+    "wallet_address": {
+      "type": "string",
+      "description": "User's wallet address"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "verified",
+        "rejected"
+      ],
+      "default": "pending"
+    },
+    "proof_url": {
+      "type": "string",
+      "description": "Proof of completion if required"
+    },
+    "points_awarded": {
+      "type": "number",
+      "default": 0
+    },
+    "completed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "verified_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "verified_by": {
+      "type": "string",
+      "description": "Admin wallet who verified"
+    }
+  },
+  "required": [
+    "task_id",
+    "wallet_address"
+  ]
+}

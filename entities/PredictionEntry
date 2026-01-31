@@ -1,0 +1,36 @@
+{
+  "name": "PredictionEntry",
+  "type": "object",
+  "properties": {
+    "prediction_id": {
+      "type": "string",
+      "description": "Reference to the prediction"
+    },
+    "wallet_address": {
+      "type": "string",
+      "description": "User's wallet address"
+    },
+    "selected_option_id": {
+      "type": "string",
+      "description": "ID of the selected option"
+    },
+    "is_correct": {
+      "type": "boolean",
+      "description": "Whether prediction was correct (set after settlement)"
+    },
+    "points_earned": {
+      "type": "number",
+      "default": 0,
+      "description": "Points earned from this prediction"
+    },
+    "submitted_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "prediction_id",
+    "wallet_address",
+    "selected_option_id"
+  ]
+}

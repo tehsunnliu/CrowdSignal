@@ -1,0 +1,37 @@
+{
+  "name": "Referral",
+  "type": "object",
+  "properties": {
+    "referrer_wallet": {
+      "type": "string",
+      "description": "Wallet of the referrer"
+    },
+    "referee_wallet": {
+      "type": "string",
+      "description": "Wallet of the referred user"
+    },
+    "referral_tier": {
+      "type": "number",
+      "description": "Tier level (1, 2, or 3)"
+    },
+    "is_valid": {
+      "type": "boolean",
+      "default": false,
+      "description": "Becomes valid after referee completes 10 predictions"
+    },
+    "total_points_earned": {
+      "type": "number",
+      "default": 0,
+      "description": "Total referral points earned from this referee"
+    },
+    "validated_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "referrer_wallet",
+    "referee_wallet",
+    "referral_tier"
+  ]
+}

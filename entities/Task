@@ -1,0 +1,99 @@
+{
+  "name": "Task",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Task title"
+    },
+    "description": {
+      "type": "string",
+      "description": "Task description"
+    },
+    "task_type": {
+      "type": "string",
+      "enum": [
+        "daily_checkin",
+        "twitter_share",
+        "twitter_follow",
+        "discord_join",
+        "telegram_join",
+        "custom"
+      ],
+      "description": "Type of task"
+    },
+    "points_reward": {
+      "type": "number",
+      "default": 10,
+      "description": "Points awarded for completion"
+    },
+    "points_type": {
+      "type": "string",
+      "enum": [
+        "regular",
+        "builder"
+      ],
+      "default": "regular"
+    },
+    "is_recurring": {
+      "type": "boolean",
+      "default": false,
+      "description": "Can be completed multiple times"
+    },
+    "recurrence_period": {
+      "type": "string",
+      "enum": [
+        "daily",
+        "weekly",
+        "monthly"
+      ],
+      "description": "How often task resets if recurring"
+    },
+    "action_url": {
+      "type": "string",
+      "description": "URL to complete the task"
+    },
+    "verification_type": {
+      "type": "string",
+      "enum": [
+        "automatic",
+        "manual",
+        "callback"
+      ],
+      "default": "manual"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "max_completions": {
+      "type": "number",
+      "description": "Maximum total completions allowed"
+    },
+    "current_completions": {
+      "type": "number",
+      "default": 0
+    },
+    "icon": {
+      "type": "string",
+      "description": "Icon name for display"
+    },
+    "partner_name": {
+      "type": "string",
+      "description": "Partner/sponsor name if applicable"
+    }
+  },
+  "required": [
+    "title",
+    "task_type",
+    "points_reward"
+  ]
+}

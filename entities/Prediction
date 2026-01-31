@@ -1,0 +1,115 @@
+{
+  "name": "Prediction",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Prediction title (max 54 characters)"
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed description of the prediction"
+    },
+    "cover_image": {
+      "type": "string",
+      "description": "Cover image URL"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "crypto",
+        "defi",
+        "nft",
+        "gaming",
+        "ecosystem",
+        "technology",
+        "community"
+      ],
+      "description": "Prediction category"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending_review",
+        "live",
+        "ended",
+        "settled",
+        "rejected"
+      ],
+      "default": "pending_review",
+      "description": "Current status of the prediction"
+    },
+    "options": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "vote_count": {
+            "type": "number"
+          }
+        }
+      },
+      "description": "2-5 answer options"
+    },
+    "correct_option_id": {
+      "type": "string",
+      "description": "ID of the correct option (set after settlement)"
+    },
+    "points_reward": {
+      "type": "number",
+      "default": 100,
+      "description": "Points awarded for correct prediction"
+    },
+    "start_time": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When prediction goes live"
+    },
+    "end_time": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When prediction ends"
+    },
+    "settlement_time": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When results are announced"
+    },
+    "reference_links": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "External reference URLs"
+    },
+    "total_participants": {
+      "type": "number",
+      "default": 0,
+      "description": "Number of participants"
+    },
+    "creator_wallet": {
+      "type": "string",
+      "description": "Wallet address of the creator"
+    },
+    "is_featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "rejection_reason": {
+      "type": "string",
+      "description": "Reason if prediction was rejected"
+    }
+  },
+  "required": [
+    "title",
+    "category",
+    "options",
+    "end_time"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "name": "ActivityLog",
+  "type": "object",
+  "properties": {
+    "wallet_address": {
+      "type": "string",
+      "description": "User's wallet address"
+    },
+    "action": {
+      "type": "string",
+      "enum": [
+        "login",
+        "prediction_submit",
+        "prediction_create",
+        "task_complete",
+        "referral_use",
+        "check_in",
+        "profile_update"
+      ],
+      "description": "Type of action"
+    },
+    "ip_address": {
+      "type": "string",
+      "description": "IP address for abuse detection"
+    },
+    "user_agent": {
+      "type": "string"
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Additional action-specific data"
+    }
+  },
+  "required": [
+    "wallet_address",
+    "action"
+  ]
+}
